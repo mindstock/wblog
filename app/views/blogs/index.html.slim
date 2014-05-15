@@ -1,0 +1,61 @@
+- if ENV['INTRODUCE'].present? 
+  - content_for(:meta) do
+    meta name="description" content="#{ENV['INTRODUCE'].dup.force_encoding('UTF-8')}"
+- content_for(:title) do
+  | 首页
+.row
+  .small-12.large-8.columns
+    - unless @newest
+      h2.blog-title 这里还没有博客
+      p
+        | 这里还没有博客, 请访问
+        = link_to '管理页面', new_admin_post_path
+        | 来创建第一篇博客
+    - else
+      = render partial: 'post_head', locals: { post: @newest }
+      .content.markdown
+        == @newest.sub_content
+
+        = link_to "阅读全文 >>", blog_path(@newest)
+        p.published-at 发表于 #{format_date(@newest.created_at)}
+
+      h4.recent-title RECENT
+      ul.recent-content
+        - @recent.each do |re|
+          li = link_to "#{re.title}",blog_path(re)
+
+  .large-3.columns.large-offset-1.self-introduce.self-introduce-index ng-controller='AboutController'
+    h4 WELCOME
+    p 我是姚博峰, 小鸡,快跑.. 是我的网名.
+
+    h4 ABOUTME
+    ul.aboutme-index
+      li
+        span 领域:
+        span 技术, 创业, 生活
+      li
+        span 位置:
+        span 中国 - 上海 - 浦东
+      li
+        span 更多:  
+        span
+          =  link_to '关于我', about_path
+    h4 SUBSCRIBE
+    ul.subscribe-ul
+      - if ENV['SENDCLOUD_USER'].present?
+        li
+          = link_to '邮件订阅 ', '', "ng-click"=>"click('email')"
+          .email-subscribe ng-show="type == 'email'"
+            = text_field_tag 'email', nil, placeholder: 'your@email.com', 'ng-model'=>'email'
+            button.small ng-click="subscribe()" ng-disabled="! email_validate()" 订阅
+            span.subscribe-success ng-show="subscribe_success" 订阅成功
+            span.subscribe-fail ng-show="subscribe_success == false" {{subscribe_fail_msg}}
+      li
+        = link_to '微信扫一扫', '', "ng-click"=>"click('weixin')"
+        .weixin-subscribe ng-show="type == 'weixin'"
+          = render partial: "qrcode", locals: { str: root_url }
+      li
+        = link_to 'RSS订阅', '', "ng-click"=>"click('rss')"
+        .rss-subscribe ng-show="type == 'rss'"
+          = link_to rss_blogs_path do
+            - image_tag('rss.png')

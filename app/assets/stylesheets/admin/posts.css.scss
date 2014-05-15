@@ -1,0 +1,48 @@
+.admin-posts-field {
+  margin-top: 1rem;
+
+  .blog-title {
+    border-bottom: 1px solid #DDDDDD;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  #post_content {
+    min-height: 20rem;
+  }
+
+  .preview {
+    min-height: 20rem;
+    border: 1px solid #DDDDDD;
+    margin-bottom: 1.275rem;
+    padding: 0.275rem 0.5rem;
+  }
+
+  .tag {
+    display: inline-block;
+    margin: 0 0.5rem;
+  }
+
+  #upload_photo {
+    float: right;
+    margin-top: 2rem;
+  }
+
+  tr {
+    &:hover {
+      background-color: #EEEEEE;
+    }
+  }
+
+}
+
+.edit-post-link {
+  margin-right: 1rem;
+}
+
+.admin-post-summary-field {
+  i {
+    margin-right: 0.385rem;
+    margin-left: 0.5rem;
+  }
+}

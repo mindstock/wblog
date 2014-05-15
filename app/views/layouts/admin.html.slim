@@ -1,0 +1,37 @@
+html
+  head
+    meta charset="utf-8" 
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title Admin Page for #{ENV['SITE_NAME']}
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "vendor/modernizr"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  body
+    nav.top-bar data-topbar=""
+      ul.title-area
+        li.name
+          h1
+            = link_to "Dashboard For #{ENV['SITE_NAME']}", admin_root_path
+        li.toggle-topbar.menu-icon
+          a href="#" Menu
+      section.top-bar-section
+        ul.left
+          li
+            = link_to '创建新博客', new_admin_post_path
+          li
+            = link_to '管理博客', admin_posts_path
+        ul.right
+          li
+            = link_to '返回首页', root_path
+          - if admin_username
+            li
+              = link_to admin_username + ' [ 退出 ]', admin_session_path(1), method: 'DELETE'
+    - flash.each do |name, msg|
+      - if msg.is_a?(String)
+        div class=("alert-box #{name == :notice ? "success" : "alert"}") data-alert=""
+          = content_tag :div, msg
+          a.close href="#"  &times;
+    .admin-main-field ng-app="app"
+      = yield
+    = render "layouts/footer"

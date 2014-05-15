@@ -1,0 +1,2420 @@
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 11.2509ms
+Overwriting existing field image in class Photo.
+  MOPED: 192.168.1.151:27017 INSERT       database=w_blog_development collection=system.indexes documents=[{:ns=>"w_blog_development.fs.files", :key=>{:filename=>1}, :name=>"filename_1"}] flags=[]
+                             COMMAND      database=w_blog_development command={:getlasterror=>1, :w=>1} runtime: 305.9331ms
+  MOPED: 192.168.1.151:27017 INSERT       database=w_blog_development collection=system.indexes documents=[{:ns=>"w_blog_development.fs.files", :key=>{:aliases=>1}, :name=>"aliases_1"}] flags=[]
+                             COMMAND      database=w_blog_development command={:getlasterror=>1, :w=>1} runtime: 0.9299ms
+  MOPED: 192.168.1.151:27017 INSERT       database=w_blog_development collection=system.indexes documents=[{:ns=>"w_blog_development.fs.files", :key=>{:uploadDate=>1}, :name=>"uploadDate_1"}] flags=[]
+                             COMMAND      database=w_blog_development command={:getlasterror=>1, :w=>1} runtime: 1.7098ms
+  MOPED: 192.168.1.151:27017 INSERT       database=w_blog_development collection=system.indexes documents=[{:ns=>"w_blog_development.fs.files", :key=>{:md5=>1}, :name=>"md5_1"}] flags=[]
+                             COMMAND      database=w_blog_development command={:getlasterror=>1, :w=>1} runtime: 0.9099ms
+  MOPED: 192.168.1.151:27017 INSERT       database=w_blog_development collection=system.indexes documents=[{:unique=>true, :ns=>"w_blog_development.fs.chunks", :key=>{:files_id=>1, :n=>-1}, :name=>"files_id_1_n_-1"}] flags=[]
+                             COMMAND      database=w_blog_development command={:getlasterror=>1, :w=>1} runtime: 1.7594ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.5790ms
+
+
+Started GET "/" for 192.168.1.142 at 2014-05-14 11:38:33 +0800
+Processing by BlogsController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.5986ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog_development collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.2935ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog_development collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3950ms
+  Rendered blogs/_qrcode.html.slim (2.7ms)
+  Rendered blogs/index.html.slim within layouts/application (166.9ms)
+  Rendered layouts/_footer.html.slim (3.6ms)
+  Rendered layouts/_google_analytics.html.slim (2.9ms)
+Completed 200 OK in 14886ms (Views: 14881.4ms)
+
+
+Started GET "/qrcodes?str=http%3A%2F%2F192.168.1.151%3A3000%2F" for 192.168.1.142 at 2014-05-14 11:38:56 +0800
+Processing by QrcodesController#show as HTML
+  Parameters: {"str"=>"http://192.168.1.151:3000/"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 300ms (Views: 173.1ms)
+
+
+Started GET "/tech" for 192.168.1.142 at 2014-05-14 11:39:22 +0800
+Processing by ArchivesController#index as HTML
+  Parameters: {"type"=>"tech"}
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog_development collection=posts selector={"$query"=>{"type"=>"技术"}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 21.6466ms
+  Rendered archives/index.html.slim within layouts/application (6.1ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+  Rendered layouts/_google_analytics.html.slim (0.1ms)
+Completed 200 OK in 603ms (Views: 578.8ms)
+
+
+Started GET "/tech.json?all=true" for 192.168.1.142 at 2014-05-14 11:39:26 +0800
+Processing by ArchivesController#index as JSON
+  Parameters: {"all"=>"true", "type"=>"tech"}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3328ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog_development collection=posts selector={"$query"=>{"type"=>"技术"}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.3054ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog_development collection=posts selector={"$query"=>{"type"=>"技术"}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=10 skip=0 batch_size=nil fields=nil runtime: 0.2498ms
+Completed 200 OK in 4ms (Views: 0.2ms)
+
+
+Started GET "/about" for 192.168.1.142 at 2014-05-14 11:39:30 +0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.slim within layouts/application (61.3ms)
+  Rendered layouts/_footer.html.slim (0.2ms)
+  Rendered layouts/_google_analytics.html.slim (0.1ms)
+Completed 200 OK in 637ms (Views: 636.4ms)
+
+
+Started GET "/" for 192.168.1.142 at 2014-05-14 11:39:46 +0800
+Processing by BlogsController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3151ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog_development collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.2934ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog_development collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2076ms
+  Rendered blogs/_qrcode.html.slim (0.5ms)
+  Rendered blogs/index.html.slim within layouts/application (35.6ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+  Rendered layouts/_google_analytics.html.slim (0.1ms)
+Completed 200 OK in 608ms (Views: 604.5ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 11:39:51 +0800
+Processing by Admin::PostsController#new as HTML
+Redirected to http://192.168.1.151:3000/admin/sessions/new
+Filter chain halted as :authericate_user! rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/admin/sessions/new" for 192.168.1.142 at 2014-05-14 11:39:51 +0800
+Processing by Admin::SessionsController#new as HTML
+  Rendered admin/sessions/new.html.slim within layouts/admin (4.6ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 571ms (Views: 570.4ms)
+
+
+Started GET "/favicon.ico" for 192.168.1.142 at 2014-05-14 11:39:55 +0800
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (62.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (108.8ms)
+
+
+Started POST "/admin/sessions?password=888&username=888" for 192.168.1.142 at 2014-05-14 11:39:59 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"password"=>"888", "username"=>"888"}
+Completed 200 OK in 1ms (Views: 0.2ms)
+
+
+Started POST "/admin/sessions?password=admin&username=admin" for 192.168.1.142 at 2014-05-14 11:40:04 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"password"=>"admin", "username"=>"admin"}
+Completed 200 OK in 1ms (Views: 0.1ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 11:40:04 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog_development collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3384ms
+  Rendered admin/posts/_form.html.slim (620.2ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (661.0ms)
+  Rendered layouts/_footer.html.slim (0.2ms)
+Completed 200 OK in 1178ms (Views: 1177.2ms)
+
+
+Started POST "/admin/sessions?password=admin&username=admin" for 192.168.1.142 at 2014-05-14 11:40:06 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"password"=>"admin", "username"=>"admin"}
+Completed 200 OK in 1ms (Views: 0.2ms)
+
+
+Started POST "/admin/posts/preview" for 192.168.1.142 at 2014-05-14 11:40:16 +0800
+Processing by Admin::PostsController#preview as JSON
+  Parameters: {"content"=>"", "post"=>{"content"=>""}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms)
+
+
+Started GET "/admin/posts" for 192.168.1.142 at 2014-05-14 11:40:26 +0800
+Processing by Admin::PostsController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3450ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog_development collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.6479ms
+  Rendered admin/posts/index.html.slim within layouts/admin (7.5ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 520ms (Views: 519.4ms)
+
+
+Started GET "/admin/posts" for 192.168.1.142 at 2014-05-14 11:40:33 +0800
+Processing by Admin::PostsController#index as HTML
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog_development collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3723ms
+  Rendered admin/posts/index.html.slim within layouts/admin (0.9ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 510ms (Views: 509.7ms)
+
+
+Started GET "/" for 192.168.1.142 at 2014-05-14 11:40:41 +0800
+Processing by BlogsController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3853ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog_development collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.2474ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog_development collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.9370ms
+  Rendered blogs/_qrcode.html.slim (0.4ms)
+  Rendered blogs/index.html.slim within layouts/application (35.5ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+  Rendered layouts/_google_analytics.html.slim (0.1ms)
+Completed 200 OK in 618ms (Views: 614.7ms)
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 5.3880ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.7151ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.9970ms
+
+
+Started GET "/" for 192.168.1.142 at 2014-05-14 15:53:58 +0800
+Processing by BlogsController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4186ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.3078ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2731ms
+  Rendered blogs/_qrcode.html.slim (3.0ms)
+  Rendered blogs/index.html.slim within layouts/application (104.0ms)
+  Rendered layouts/_footer.html.slim (2.4ms)
+  Rendered layouts/_google_analytics.html.slim (3.1ms)
+Completed 200 OK in 2229ms (Views: 2224.3ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 15:54:11 +0800
+Processing by Admin::PostsController#new as HTML
+Redirected to http://192.168.1.151:3000/admin/sessions/new
+Filter chain halted as :authericate_user! rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/admin/sessions/new" for 192.168.1.142 at 2014-05-14 15:54:12 +0800
+Processing by Admin::SessionsController#new as HTML
+  Rendered admin/sessions/new.html.slim within layouts/admin (3.5ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 825ms (Views: 824.6ms)
+
+
+Started GET "/favicon.ico" for 192.168.1.142 at 2014-05-14 15:54:19 +0800
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (36.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (73.1ms)
+
+
+Started POST "/admin/sessions?password=ybf@8023&username=admin" for 192.168.1.142 at 2014-05-14 15:54:25 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"password"=>"ybf@8023", "username"=>"admin"}
+Completed 200 OK in 2ms (Views: 0.2ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 15:54:26 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5196ms
+  Rendered admin/posts/_form.html.slim (488.5ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (526.9ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 1337ms (Views: 1335.9ms)
+
+
+Started POST "/photos" for 192.168.1.142 at 2014-05-14 15:54:39 +0800
+Processing by PhotosController#create as */*
+  Parameters: {"Filedata"=>#<ActionDispatch::Http::UploadedFile:0x00000003fdd498 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5230-1skuogr>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"Filedata\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Overwriting existing field image in class Photo.
+Completed 500 Internal Server Error in 159ms
+
+NoMethodError (undefined method `size' for nil:NilClass):
+  app/controllers/photos_controller.rb:4:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (19.6ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 15:59:26 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"teste", "type"=>"技术", "labels"=>"a", "content"=>""}
+Unpermitted parameters: utf8, authenticity_token
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3348ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.2671ms
+  MOPED: 192.168.1.151:27017 INSERT       database=w_blog collection=labels documents=[{"_id"=>BSON::ObjectId('5373225f63656e146e000000'), "name"=>"a", "updated_at"=>2014-05-14 07:59:27 UTC, "created_at"=>2014-05-14 07:59:27 UTC}] flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 70.1443ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"teste"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4081ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3057ms
+  Rendered admin/posts/_form.html.slim (44.1ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (81.0ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 1166ms (Views: 878.1ms)
+
+
+Started POST "/photos" for 192.168.1.142 at 2014-05-14 15:59:42 +0800
+Processing by PhotosController#create as */*
+  Parameters: {"Filedata"=>#<ActionDispatch::Http::UploadedFile:0x00000007ad6888 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5230-r6mnet>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"Filedata\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Overwriting existing field image in class Photo.
+Completed 500 Internal Server Error in 134ms
+
+NoMethodError (undefined method `size' for nil:NilClass):
+  app/controllers/photos_controller.rb:4:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (16.6ms)
+
+
+Started GET "/admin/posts" for 192.168.1.142 at 2014-05-14 15:59:55 +0800
+Processing by Admin::PostsController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4738ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4888ms
+  Rendered admin/posts/index.html.slim within layouts/admin (8.6ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 808ms (Views: 807.3ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 16:00:07 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.1523ms
+  Rendered admin/posts/_form.html.slim (44.2ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (81.1ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 881ms (Views: 880.5ms)
+
+
+Started POST "/photos" for 192.168.1.142 at 2014-05-14 16:00:44 +0800
+Processing by PhotosController#create as */*
+  Parameters: {"Filedata"=>#<ActionDispatch::Http::UploadedFile:0x007fcbd81b3c70 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5230-qo7tqe>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"Filedata\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Completed 500 Internal Server Error in 20ms
+
+NoMethodError (undefined method `size' for nil:NilClass):
+  app/controllers/photos_controller.rb:4:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (16.3ms)
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.8888ms
+
+
+Started GET "/admin" for 192.168.1.142 at 2014-05-14 16:03:46 +0800
+Processing by Admin::DashboardController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.6365ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"posts", :query=>{}} runtime: 0.5085ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"comments", :query=>{}} runtime: 0.7879ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3069ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"subscribes", :query=>{}} runtime: 0.3725ms
+  Rendered admin/dashboard/index.html.slim within layouts/admin (31.3ms)
+  Rendered layouts/_footer.html.slim (2.9ms)
+Completed 200 OK in 2147ms (Views: 2052.6ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 16:04:03 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3471ms
+  Rendered admin/posts/_form.html.slim (460.8ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (501.7ms)
+  Rendered layouts/_footer.html.slim (0.2ms)
+Completed 200 OK in 1291ms (Views: 1290.2ms)
+
+
+Started POST "/photos" for 192.168.1.142 at 2014-05-14 16:04:18 +0800
+Processing by PhotosController#create as */*
+  Parameters: {"Filedata"=>#<ActionDispatch::Http::UploadedFile:0x000000061f3190 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5293-1xttl4x>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"Filedata\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Overwriting existing field image in class Photo.
+Completed 500 Internal Server Error in 118ms
+
+NoMethodError (undefined method `size' for nil:NilClass):
+  app/controllers/photos_controller.rb:4:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (15.9ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 16:04:40 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4233ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3483ms
+  Rendered admin/posts/_form.html.slim (83.4ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (119.0ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 973ms (Views: 911.7ms)
+
+
+Started POST "/photos" for 192.168.1.142 at 2014-05-14 16:04:59 +0800
+Processing by PhotosController#create as */*
+  Parameters: {"Filedata"=>#<ActionDispatch::Http::UploadedFile:0x000000015fe3c0 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5293-dbo9sy>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"Filedata\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Overwriting existing field image in class Photo.
+Completed 500 Internal Server Error in 86ms
+
+NoMethodError (undefined method `size' for nil:NilClass):
+  app/controllers/photos_controller.rb:6:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (16.8ms)
+
+
+Started GET "/admin/" for 192.168.1.142 at 2014-05-14 16:05:58 +0800
+Processing by Admin::DashboardController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3933ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"posts", :query=>{}} runtime: 0.2372ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"comments", :query=>{}} runtime: 0.4223ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2352ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"subscribes", :query=>{}} runtime: 0.3765ms
+  Rendered admin/dashboard/index.html.slim within layouts/admin (0.1ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 977ms (Views: 803.9ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 16:06:08 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3630ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2807ms
+  Rendered admin/posts/_form.html.slim (80.4ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (116.5ms)
+  Rendered layouts/_footer.html.slim (0.2ms)
+Completed 200 OK in 960ms (Views: 958.9ms)
+
+
+Started POST "/photos" for 192.168.1.142 at 2014-05-14 16:06:20 +0800
+Processing by PhotosController#create as */*
+  Parameters: {"Filedata"=>#<ActionDispatch::Http::UploadedFile:0x00000006456450 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5293-nnar3b>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"Filedata\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Overwriting existing field image in class Photo.
+Completed 500 Internal Server Error in 125ms
+
+NoMethodError (undefined method `size' for nil:NilClass):
+  app/controllers/photos_controller.rb:5:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (17.7ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 16:09:28 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3335ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4516ms
+  Rendered admin/posts/_form.html.slim (76.8ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (111.9ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 995ms (Views: 931.4ms)
+
+
+Started POST "/photos" for 192.168.1.142 at 2014-05-14 16:09:39 +0800
+Processing by PhotosController#create as */*
+  Parameters: {"Filedata"=>#<ActionDispatch::Http::UploadedFile:0x0000000471d190 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5293-30a9vc>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"Filedata\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Overwriting existing field image in class Photo.
+Completed 500 Internal Server Error in 85ms
+
+NoMethodError (undefined method `size' for nil:NilClass):
+  app/controllers/photos_controller.rb:6:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (16.8ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 16:10:58 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3987ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4625ms
+  Rendered admin/posts/_form.html.slim (84.3ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (123.5ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 999ms (Views: 939.4ms)
+
+
+Started POST "/photos" for 192.168.1.142 at 2014-05-14 16:11:12 +0800
+Processing by PhotosController#create as */*
+  Parameters: {"Filedata"=>#<ActionDispatch::Http::UploadedFile:0x00000000e798e8 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5293-bbcm0f>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"Filedata\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Overwriting existing field image in class Photo.
+Completed 500 Internal Server Error in 114ms
+
+NoMethodError (undefined method `size' for nil:NilClass):
+  app/controllers/photos_controller.rb:4:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (15.7ms)
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.6977ms
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 16:31:43 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.7573ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4607ms
+  Rendered admin/posts/_form.html.slim (474.4ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (614.0ms)
+  Rendered layouts/_footer.html.slim (3.4ms)
+Completed 200 OK in 2648ms (Views: 2613.9ms)
+
+
+Started POST "/photos" for 192.168.1.142 at 2014-05-14 16:31:58 +0800
+Processing by PhotosController#create as */*
+  Parameters: {"Filedata"=>#<ActionDispatch::Http::UploadedFile:0x007f64a4986880 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5410-tu9sf7>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"Filedata\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Completed 500 Internal Server Error in 55ms
+
+NoMethodError (undefined method `attr_accessible' for Photo:Class):
+  app/models/photo.rb:4:in `<class:Photo>'
+  app/models/photo.rb:1:in `<top (required)>'
+  app/controllers/photos_controller.rb:3:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (16.9ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 16:32:37 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4365ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4298ms
+  Rendered admin/posts/_form.html.slim (74.0ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (110.4ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 983ms (Views: 923.1ms)
+
+
+Started POST "/photos" for 192.168.1.142 at 2014-05-14 16:32:48 +0800
+Processing by PhotosController#create as */*
+  Parameters: {"Filedata"=>#<ActionDispatch::Http::UploadedFile:0x00000007d78c80 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5410-1v0e3nu>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"Filedata\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Overwriting existing field image in class Photo.
+Completed 500 Internal Server Error in 73ms
+
+NoMethodError (undefined method `empty?' for #<ActionDispatch::Http::UploadedFile:0x00000007d78c80>):
+  app/controllers/photos_controller.rb:3:in `new'
+  app/controllers/photos_controller.rb:3:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (17.4ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 16:33:20 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3625ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4714ms
+  Rendered admin/posts/_form.html.slim (82.8ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (120.3ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 994ms (Views: 933.9ms)
+
+
+Started POST "/photos" for 192.168.1.142 at 2014-05-14 16:33:49 +0800
+Processing by PhotosController#create as */*
+  Parameters: {"Filedata"=>#<ActionDispatch::Http::UploadedFile:0x000000076e9ae0 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5410-1b8kcui>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"Filedata\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Overwriting existing field image in class Photo.
+Completed 500 Internal Server Error in 102ms
+
+NoMethodError (undefined method `size' for nil:NilClass):
+  app/controllers/photos_controller.rb:4:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (16.4ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 16:34:52 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3679ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2538ms
+  Rendered admin/posts/_form.html.slim (81.4ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (117.7ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 985ms (Views: 923.3ms)
+
+
+Started POST "/photos" for 192.168.1.142 at 2014-05-14 16:35:04 +0800
+Processing by PhotosController#create as */*
+  Parameters: {"Filedata"=>#<ActionDispatch::Http::UploadedFile:0x000000025f8500 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5410-iouovv>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"Filedata\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Overwriting existing field image in class Photo.
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3833ms
+  MOPED: 192.168.1.151:27017 INSERT       database=w_blog collection=photos documents=[{"_id"=>BSON::ObjectId('53732ab863656e1522000000'), "image"=>"psb.jpg", "updated_at"=>2014-05-14 08:35:04 UTC, "created_at"=>2014-05-14 08:35:04 UTC}] flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.8468ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 219ms (Views: 9.1ms)
+
+
+Started POST "/admin/posts/preview" for 192.168.1.142 at 2014-05-14 16:35:11 +0800
+Processing by Admin::PostsController#preview as JSON
+  Parameters: {"content"=>"", "post"=>{"content"=>""}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms)
+
+
+Started POST "/admin/posts/preview" for 192.168.1.142 at 2014-05-14 16:35:18 +0800
+Processing by Admin::PostsController#preview as JSON
+  Parameters: {"content"=>"", "post"=>{"content"=>""}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 16:35:26 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"testa", "type"=>"技术", "labels"=>"a", "content"=>"![](/uploads/photo/image/53732ab863656e1522000000/psb.jpg)"}
+Unpermitted parameters: utf8, authenticity_token
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 15.9815ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"testa"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.3711ms
+  MOPED: 192.168.1.151:27017 INSERT       database=w_blog collection=posts documents=[{"_id"=>BSON::ObjectId('53732ace63656e1522010000'), "visited_count"=>0, "title"=>"testa", "content"=>"![](/uploads/photo/image/53732ab863656e1522000000/psb.jpg)", "type"=>"技术", "label_ids"=>[BSON::ObjectId('5373225f63656e146e000000')], "updated_at"=>2014-05-14 08:35:26 UTC, "created_at"=>2014-05-14 08:35:26 UTC}] flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 7.4602ms
+Redirected to http://192.168.1.151:3000/admin
+Completed 302 Found in 102ms
+
+
+Started GET "/admin" for 192.168.1.142 at 2014-05-14 16:35:26 +0800
+Processing by Admin::DashboardController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3788ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"posts", :query=>{}} runtime: 0.2331ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"comments", :query=>{}} runtime: 0.4777ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.6410ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"subscribes", :query=>{}} runtime: 1.2572ms
+  Rendered admin/dashboard/index.html.slim within layouts/admin (4.9ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 888ms (Views: 824.7ms)
+
+
+Started GET "/" for 192.168.1.142 at 2014-05-14 16:35:40 +0800
+Processing by BlogsController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.2458ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.3782ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4179ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 30.0056ms
+  Rendered blogs/_post_head.html.slim (35.2ms)
+  Rendered blogs/_qrcode.html.slim (2.9ms)
+  Rendered blogs/index.html.slim within layouts/application (148.1ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+  Rendered layouts/_google_analytics.html.slim (2.2ms)
+Completed 200 OK in 1056ms (Views: 1052.1ms)
+
+
+Started GET "/admin" for 192.168.1.142 at 2014-05-14 16:36:09 +0800
+Processing by Admin::DashboardController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"posts", :query=>{}} runtime: 0.3748ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"comments", :query=>{}} runtime: 0.1490ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3205ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"subscribes", :query=>{}} runtime: 0.3738ms
+  Rendered admin/dashboard/index.html.slim within layouts/admin (0.1ms)
+  Rendered layouts/_footer.html.slim (0.2ms)
+Completed 200 OK in 993ms (Views: 811.1ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 16:36:21 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3364ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3514ms
+  Rendered admin/posts/_form.html.slim (72.8ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (108.8ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 931ms (Views: 929.1ms)
+
+
+Started POST "/photos" for 192.168.1.142 at 2014-05-14 16:36:32 +0800
+Processing by PhotosController#create as */*
+  Parameters: {"Filedata"=>#<ActionDispatch::Http::UploadedFile:0x00000007aa9c98 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5410-120bzdb>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"Filedata\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Overwriting existing field image in class Photo.
+Completed 500 Internal Server Error in 96ms
+
+NoMethodError (undefined method `size' for nil:NilClass):
+  app/controllers/photos_controller.rb:4:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (17.8ms)
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.4601ms
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 16:39:15 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.6880ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3197ms
+  Rendered admin/posts/_form.html.slim (464.5ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (597.0ms)
+  Rendered layouts/_footer.html.slim (2.8ms)
+Completed 200 OK in 2605ms (Views: 2570.7ms)
+
+
+Started POST "/photos" for 192.168.1.142 at 2014-05-14 16:39:30 +0800
+Processing by PhotosController#create as */*
+  Parameters: {"Filedata"=>#<ActionDispatch::Http::UploadedFile:0x007f81689972d0 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5648-160529m>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"Filedata\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Overwriting existing field image in class Photo.
+Completed 500 Internal Server Error in 178ms
+
+NoMethodError (undefined method `size' for nil:NilClass):
+  app/controllers/photos_controller.rb:4:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (17.2ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 16:40:42 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4766ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3055ms
+  Rendered admin/posts/_form.html.slim (71.9ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (102.0ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 926ms (Views: 867.6ms)
+
+
+Started POST "/photos" for 192.168.1.142 at 2014-05-14 16:40:53 +0800
+Processing by PhotosController#create as */*
+  Parameters: {"Filedata"=>#<ActionDispatch::Http::UploadedFile:0x00000006d12620 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5648-1t1x176>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"Filedata\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Overwriting existing field image in class Photo.
+Completed 500 Internal Server Error in 204ms
+
+NoMethodError (undefined method `size' for nil:NilClass):
+  app/controllers/photos_controller.rb:4:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (17.3ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 16:44:08 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3755ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4720ms
+  Rendered admin/posts/_form.html.slim (80.3ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (115.9ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 1018ms (Views: 952.2ms)
+
+
+Started POST "/photos" for 192.168.1.142 at 2014-05-14 16:44:19 +0800
+Processing by PhotosController#create as */*
+  Parameters: {"Filedata"=>#<ActionDispatch::Http::UploadedFile:0x000000064b1f30 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5648-1afcbrd>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"Filedata\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Overwriting existing field image in class Photo.
+Completed 500 Internal Server Error in 207ms
+
+NoMethodError (undefined method `size' for nil:NilClass):
+  app/controllers/photos_controller.rb:4:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (14.7ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 16:44:36 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4190ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3568ms
+  Rendered admin/posts/_form.html.slim (81.0ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (117.2ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 995ms (Views: 937.5ms)
+
+
+Started POST "/photos" for 192.168.1.142 at 2014-05-14 16:44:47 +0800
+Processing by PhotosController#create as */*
+  Parameters: {"Filedata"=>#<ActionDispatch::Http::UploadedFile:0x000000046cc358 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5648-zdgai6>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"Filedata\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Overwriting existing field image in class Photo.
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.8625ms
+  MOPED: 192.168.1.151:27017 INSERT       database=w_blog collection=photos documents=[{"_id"=>BSON::ObjectId('53732cff63656e1610000000'), "image"=>"psb.jpg", "updated_at"=>2014-05-14 08:44:47 UTC, "created_at"=>2014-05-14 08:44:47 UTC}] flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.4544ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 200ms (Views: 8.8ms)
+
+
+Started POST "/admin/posts/preview" for 192.168.1.142 at 2014-05-14 16:44:54 +0800
+Processing by Admin::PostsController#preview as JSON
+  Parameters: {"content"=>"", "post"=>{"content"=>""}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.5ms)
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.4350ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.6683ms
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:02:51 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3684ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4825ms
+  Rendered admin/posts/_form.html.slim (91.3ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (126.4ms)
+Completed 500 Internal Server Error in 959ms
+
+ActionView::Template::Error (couldn't find file 'kindeditor'
+  (in /mnt/share/js/websites/wblog/app/assets/javascripts/application.js:3)):
+     5:     title Admin Page for #{ENV['SITE_NAME']}
+     6:     = stylesheet_link_tag    "application"
+     7:     = javascript_include_tag "vendor/modernizr"
+     8:     = javascript_include_tag "application"
+     9:     = csrf_meta_tags
+    10:   body
+    11:     nav.top-bar data-topbar=""
+  app/views/layouts/admin.html.slim:8:in `_app_views_layouts_admin_html_slim___3795897737229908592_70097022849240'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.9ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:07:14 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4700ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3040ms
+  Rendered admin/posts/_form.html.slim (37.3ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (73.7ms)
+Completed 500 Internal Server Error in 867ms
+
+ActionView::Template::Error (couldn't find file 'kindeditor'
+  (in /mnt/share/js/websites/wblog/app/assets/javascripts/application.js:3)):
+     5:     title Admin Page for #{ENV['SITE_NAME']}
+     6:     = stylesheet_link_tag    "application"
+     7:     = javascript_include_tag "vendor/modernizr"
+     8:     = javascript_include_tag "application"
+     9:     = csrf_meta_tags
+    10:   body
+    11:     nav.top-bar data-topbar=""
+  app/views/layouts/admin.html.slim:8:in `_app_views_layouts_admin_html_slim___3795897737229908592_70097022849240'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.5ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:07:20 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3727ms
+  Rendered admin/posts/_form.html.slim (45.2ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (83.8ms)
+Completed 500 Internal Server Error in 828ms
+
+ActionView::Template::Error (couldn't find file 'kindeditor'
+  (in /mnt/share/js/websites/wblog/app/assets/javascripts/application.js:3)):
+     5:     title Admin Page for #{ENV['SITE_NAME']}
+     6:     = stylesheet_link_tag    "application"
+     7:     = javascript_include_tag "vendor/modernizr"
+     8:     = javascript_include_tag "application"
+     9:     = csrf_meta_tags
+    10:   body
+    11:     nav.top-bar data-topbar=""
+  app/views/layouts/admin.html.slim:8:in `_app_views_layouts_admin_html_slim___3795897737229908592_70097022849240'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.5ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:10:32 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.2729ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3163ms
+  Rendered admin/posts/_form.html.slim (102.5ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (139.6ms)
+Completed 500 Internal Server Error in 213ms
+
+ActionView::Template::Error (undefined method `kindeditor_tag' for #<#<Class:0x000000066a0198>:0x00000006f0dc18>):
+    32:     = f.input :content, :as=> :text, :label => false, input_html: { name: 'content', "ng-model"=>'content', 'ng-initial'=>'' }
+    33: 
+    34:   .preview.markdown ng-hide="body_active" ng-bind-html=" previewHTML "
+    35:   = kindeditor_tag :content
+    36:   .row
+    37:     .small-12.large-6.columns.posts-button
+    38:       button 提交
+  app/views/admin/posts/_form.html.slim:35:in `block in _app_views_admin_posts__form_html_slim__1336618619178325868_58231780'
+  app/views/admin/posts/_form.html.slim:2:in `_app_views_admin_posts__form_html_slim__1336618619178325868_58231780'
+  app/views/admin/posts/new.html.slim:5:in `_app_views_admin_posts_new_html_slim__43468664425909430_70097022852260'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (26.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.9ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:10:49 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3750ms
+  Rendered admin/posts/_form.html.slim (57.6ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (96.1ms)
+Completed 500 Internal Server Error in 848ms
+
+ActionView::Template::Error (couldn't find file 'kindeditor'
+  (in /mnt/share/js/websites/wblog/app/assets/javascripts/application.js:3)):
+     5:     title Admin Page for #{ENV['SITE_NAME']}
+     6:     = stylesheet_link_tag    "application"
+     7:     = javascript_include_tag "vendor/modernizr"
+     8:     = javascript_include_tag "application"
+     9:     = csrf_meta_tags
+    10:   body
+    11:     nav.top-bar data-topbar=""
+  app/views/layouts/admin.html.slim:8:in `_app_views_layouts_admin_html_slim___3795897737229908592_70097022849240'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.8ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:11:20 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3403ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2854ms
+  Rendered admin/posts/_form.html.slim (57.5ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (94.3ms)
+Completed 500 Internal Server Error in 845ms
+
+ActionView::Template::Error (couldn't find file 'kindeditor'
+  (in /mnt/share/js/websites/wblog/app/assets/javascripts/application.js:3)):
+     5:     title Admin Page for #{ENV['SITE_NAME']}
+     6:     = stylesheet_link_tag    "application"
+     7:     = javascript_include_tag "vendor/modernizr"
+     8:     = javascript_include_tag "application"
+     9:     = csrf_meta_tags
+    10:   body
+    11:     nav.top-bar data-topbar=""
+  app/views/layouts/admin.html.slim:8:in `_app_views_layouts_admin_html_slim___3795897737229908592_70097022849240'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.0ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:11:26 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3721ms
+  Rendered admin/posts/_form.html.slim (45.3ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (80.2ms)
+Completed 500 Internal Server Error in 869ms
+
+ActionView::Template::Error (couldn't find file 'kindeditor'
+  (in /mnt/share/js/websites/wblog/app/assets/javascripts/application.js:3)):
+     5:     title Admin Page for #{ENV['SITE_NAME']}
+     6:     = stylesheet_link_tag    "application"
+     7:     = javascript_include_tag "vendor/modernizr"
+     8:     = javascript_include_tag "application"
+     9:     = csrf_meta_tags
+    10:   body
+    11:     nav.top-bar data-topbar=""
+  app/views/layouts/admin.html.slim:8:in `_app_views_layouts_admin_html_slim___3795897737229908592_70097022849240'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.7ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:12:35 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4064ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3359ms
+  Rendered admin/posts/_form.html.slim (148.4ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (186.6ms)
+Completed 500 Internal Server Error in 258ms
+
+ActionView::Template::Error (No input found for kindeditor):
+    32:     = f.input :content, :as=> :text, :label => false, input_html: { name: 'content', "ng-model"=>'content', 'ng-initial'=>'' }
+    33: 
+    34:   .preview.markdown ng-hide="body_active" ng-bind-html=" previewHTML "
+    35:   = f.input :content, :as => :kindeditor, :input_html => { :simple_mode => true } 
+    36:   .row
+    37:     .small-12.large-6.columns.posts-button
+    38:       button 提交
+  app/views/admin/posts/_form.html.slim:35:in `block in _app_views_admin_posts__form_html_slim__1336618619178325868_36898140'
+  app/views/admin/posts/_form.html.slim:2:in `_app_views_admin_posts__form_html_slim__1336618619178325868_36898140'
+  app/views/admin/posts/new.html.slim:5:in `_app_views_admin_posts_new_html_slim__43468664425909430_70097022852260'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.5ms)
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.9139ms
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:13:30 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.2148ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3568ms
+  Rendered admin/posts/_form.html.slim (194.2ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (268.7ms)
+  Rendered layouts/_footer.html.slim (2.9ms)
+Completed 200 OK in 2608ms (Views: 2574.8ms)
+
+
+Started POST "/kindeditor/upload?dir=image" for 192.168.1.142 at 2014-05-14 17:13:52 +0800
+Processing by Kindeditor::AssetsController#create as HTML
+  Parameters: {"localUrl"=>"C:\\fakepath\\psb.jpg", "imgFile"=>#<ActionDispatch::Http::UploadedFile:0x00000007beeba8 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5917-1kh4dbt>, @original_filename="psb.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imgFile\"; filename=\"psb.jpg\"\r\nContent-Type: image/jpeg\r\n">, "dir"=>"image"}
+Overwriting existing field asset in class Kindeditor::File.
+Overwriting existing field asset in class Kindeditor::Flash.
+Overwriting existing field asset in class Kindeditor::Image.
+Overwriting existing field asset in class Kindeditor::Media.
+========= Warning: the owner_id is 0, "delete uploaded files automatically" will not work. =========
+  MOPED: 192.168.1.151:27017 INSERT       database=w_blog collection=kindeditor_assets documents=[{"_id"=>BSON::ObjectId('537333d163656e171d000000'), "_type"=>"Kindeditor::Image", "owner_id"=>0, "asset_type"=>"image", "file_size"=>213570, "file_type"=>"image/jpeg", "asset"=>"66654ffd0835.jpg", "updated_at"=>2014-05-14 09:13:53 UTC, "created_at"=>2014-05-14 09:13:53 UTC}] flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 1.4773ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 341ms (Views: 10.3ms)
+
+
+Started POST "/admin/posts/preview" for 192.168.1.142 at 2014-05-14 17:13:57 +0800
+Processing by Admin::PostsController#preview as JSON
+  Parameters: {"content"=>"", "post"=>{"content"=>""}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms)
+
+
+Started POST "/admin/posts/preview" for 192.168.1.142 at 2014-05-14 17:13:58 +0800
+Processing by Admin::PostsController#preview as JSON
+  Parameters: {"content"=>"", "post"=>{"content"=>""}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms)
+
+
+Started POST "/admin/posts/preview" for 192.168.1.142 at 2014-05-14 17:14:00 +0800
+Processing by Admin::PostsController#preview as JSON
+  Parameters: {"content"=>"", "post"=>{"content"=>""}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.9ms)
+
+
+Started POST "/admin/posts/preview" for 192.168.1.142 at 2014-05-14 17:14:03 +0800
+Processing by Admin::PostsController#preview as JSON
+  Parameters: {"content"=>"", "post"=>{"content"=>""}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 1.2ms)
+
+
+Started POST "/admin/posts/preview" for 192.168.1.142 at 2014-05-14 17:14:04 +0800
+Processing by Admin::PostsController#preview as JSON
+  Parameters: {"content"=>"", "post"=>{"content"=>""}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 47ms (Views: 0.7ms)
+
+
+Started POST "/admin/posts/preview" for 192.168.1.142 at 2014-05-14 17:14:05 +0800
+Processing by Admin::PostsController#preview as JSON
+  Parameters: {"content"=>"", "post"=>{"content"=>""}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.7ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:14:28 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4789ms
+  Rendered admin/posts/_form.html.slim (38.9ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (74.7ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 897ms (Views: 895.9ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:15:30 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3504ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2987ms
+  Rendered admin/posts/_form.html.slim (86.7ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (125.6ms)
+Completed 500 Internal Server Error in 193ms
+
+ActionView::Template::Error (undefined method `正文' for #<Post:0x0000000753f0f0>):
+    19:           - Label.all.each do |label|
+    20:             a.tag href="#" ng-click="addTag($event)" #{label.name}
+    21:           
+    22:   = f.input :正文, :as => :kindeditor, :input_html => { :simple_mode => true } 
+    23:   .row
+    24:     .small-12.large-6.columns.posts-button
+    25:       button 提交
+  app/views/admin/posts/_form.html.slim:22:in `block in _app_views_admin_posts__form_html_slim___4580611514915256561_61383340'
+  app/views/admin/posts/_form.html.slim:2:in `_app_views_admin_posts__form_html_slim___4580611514915256561_61383340'
+  app/views/admin/posts/new.html.slim:5:in `_app_views_admin_posts_new_html_slim__2407146779071723257_57405660'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.7ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:15:36 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4302ms
+  Rendered admin/posts/_form.html.slim (41.0ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (77.8ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 892ms (Views: 891.7ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:17:25 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"test", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"test"}}
+Unpermitted parameters: utf8, authenticity_token, post
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.2946ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.3667ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"test"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4591ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4142ms
+  Rendered admin/posts/_form.html.slim (33.4ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (76.4ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 943ms (Views: 881.3ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:20:10 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"test", "type"=>"技术", "labels"=>"", "post"=>{"content"=>"aaaaaaaa"}}
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/controllers/admin/posts_controller.rb:41:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.0ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:20:53 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"test", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"aaaaaaaa"}}
+Unpermitted parameters: utf8, authenticity_token, post
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3908ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.7387ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"test"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4088ms
+  Rendered admin/posts/_form.html.slim (5.3ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (42.4ms)
+Completed 500 Internal Server Error in 359ms
+
+SyntaxError (/mnt/share/js/websites/wblog/app/views/admin/posts/_form.html.slim:22: syntax error, unexpected ':', expecting ')'
+...ditor, :editor_id => :content :input_html => { :simple_mode ...
+...                               ^):
+  app/views/admin/posts/new.html.slim:5:in `_app_views_admin_posts_new_html_slim__2407146779071723257_57405660'
+  app/controllers/admin/posts_controller.rb:55:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.9ms)
+
+
+Started POST "/kindeditor/upload?dir=image" for 192.168.1.142 at 2014-05-14 17:21:47 +0800
+Processing by Kindeditor::AssetsController#create as HTML
+  Parameters: {"localUrl"=>"C:\\fakepath\\psb (2).jpg", "imgFile"=>#<ActionDispatch::Http::UploadedFile:0x00000006f6a350 @tempfile=#<Tempfile:/tmp/RackMultipart20140514-5917-iu0uno>, @original_filename="psb (2).jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imgFile\"; filename=\"psb (2).jpg\"\r\nContent-Type: image/jpeg\r\n">, "dir"=>"image"}
+Overwriting existing field asset in class Kindeditor::File.
+Overwriting existing field asset in class Kindeditor::Flash.
+Overwriting existing field asset in class Kindeditor::Image.
+Overwriting existing field asset in class Kindeditor::Media.
+========= Warning: the owner_id is 0, "delete uploaded files automatically" will not work. =========
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3417ms
+  MOPED: 192.168.1.151:27017 INSERT       database=w_blog collection=kindeditor_assets documents=[{"_id"=>BSON::ObjectId('537335ab63656e171d020000'), "_type"=>"Kindeditor::Image", "owner_id"=>0, "asset_type"=>"image", "file_size"=>213150, "file_type"=>"image/jpeg", "asset"=>"ee6fba084179.jpg", "updated_at"=>2014-05-14 09:21:47 UTC, "created_at"=>2014-05-14 09:21:47 UTC}] flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.3401ms
+  Rendered text template (0.0ms)
+Completed 200 OK in 310ms (Views: 1.4ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:21:52 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"test", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"aaaaaaaa<img src=\"/uploads/image/201405/ee6fba084179.jpg\" alt=\"\" />"}}
+Unpermitted parameters: utf8, authenticity_token, post
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4540ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"test"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.5184ms
+  Rendered admin/posts/_form.html.slim (4.7ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (41.8ms)
+Completed 500 Internal Server Error in 119ms
+
+SyntaxError (/mnt/share/js/websites/wblog/app/views/admin/posts/_form.html.slim:22: syntax error, unexpected ':', expecting ')'
+...ditor, :editor_id => :content :input_html => { :simple_mode ...
+...                               ^):
+  app/views/admin/posts/new.html.slim:5:in `_app_views_admin_posts_new_html_slim__2407146779071723257_57405660'
+  app/controllers/admin/posts_controller.rb:55:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.2ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:22:53 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"test", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"aaaaaaaa<img src=\"/uploads/image/201405/ee6fba084179.jpg\" alt=\"\" />"}}
+Unpermitted parameters: utf8, authenticity_token, post
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3420ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.3662ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"test"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.8314ms
+  Rendered admin/posts/_form.html.slim (4.9ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (39.3ms)
+Completed 500 Internal Server Error in 326ms
+
+SyntaxError (/mnt/share/js/websites/wblog/app/views/admin/posts/_form.html.slim:22: syntax error, unexpected ':', expecting ')'
+...ditor, :editor_id => :content :input_html => { :simple_mode ...
+...                               ^):
+  app/views/admin/posts/new.html.slim:5:in `_app_views_admin_posts_new_html_slim__2407146779071723257_57405660'
+  app/controllers/admin/posts_controller.rb:55:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.9ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:23:17 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"test", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"aaaaaaaa<img src=\"/uploads/image/201405/ee6fba084179.jpg\" alt=\"\" />"}}
+Unpermitted parameters: utf8, authenticity_token, post
+Unpermitted parameters: utf8, authenticity_token, post
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.5240ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"test"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4150ms
+  Rendered admin/posts/_form.html.slim (4.8ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (42.5ms)
+Completed 500 Internal Server Error in 327ms
+
+SyntaxError (/mnt/share/js/websites/wblog/app/views/admin/posts/_form.html.slim:22: syntax error, unexpected ':', expecting ')'
+...ditor, :editor_id => :content :input_html => { :simple_mode ...
+...                               ^):
+  app/views/admin/posts/new.html.slim:5:in `_app_views_admin_posts_new_html_slim__2407146779071723257_57405660'
+  app/controllers/admin/posts_controller.rb:56:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.3ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:24:46 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"test", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"aaaaaaaa<img src=\"/uploads/image/201405/ee6fba084179.jpg\" alt=\"\" />"}}
+Completed 500 Internal Server Error in 61ms
+
+ArgumentError (wrong number of arguments (3 for 0..1)):
+  app/controllers/admin/posts_controller.rb:41:in `new'
+  app/controllers/admin/posts_controller.rb:41:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.2ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:26:04 +0800
+
+SyntaxError (/mnt/share/js/websites/wblog/app/controllers/admin/posts_controller.rb:43: syntax error, unexpected tSYMBEG, expecting '}'
+      :type => params[:type]
+       ^
+/mnt/share/js/websites/wblog/app/controllers/admin/posts_controller.rb:44: syntax error, unexpected '}', expecting keyword_end):
+  activesupport (4.1.1) lib/active_support/dependencies.rb:443:in `load'
+  activesupport (4.1.1) lib/active_support/dependencies.rb:443:in `block in load_file'
+  activesupport (4.1.1) lib/active_support/dependencies.rb:633:in `new_constants_in'
+  activesupport (4.1.1) lib/active_support/dependencies.rb:442:in `load_file'
+  activesupport (4.1.1) lib/active_support/dependencies.rb:342:in `require_or_load'
+  activesupport (4.1.1) lib/active_support/dependencies.rb:480:in `load_missing_constant'
+  activesupport (4.1.1) lib/active_support/dependencies.rb:180:in `const_missing'
+  activesupport (4.1.1) lib/active_support/inflector/methods.rb:240:in `const_get'
+  activesupport (4.1.1) lib/active_support/inflector/methods.rb:240:in `block in constantize'
+  activesupport (4.1.1) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.1) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.1) lib/active_support/inflector/methods.rb:236:in `constantize'
+  activesupport (4.1.1) lib/active_support/dependencies.rb:552:in `get'
+  activesupport (4.1.1) lib/active_support/dependencies.rb:583:in `constantize'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.8ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:26:21 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"test", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"aaaaaaaa<img src=\"/uploads/image/201405/ee6fba084179.jpg\" alt=\"\" />"}}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3854ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.5884ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"test"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.3841ms
+  Rendered admin/posts/_form.html.slim (5.0ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (40.8ms)
+Completed 500 Internal Server Error in 322ms
+
+SyntaxError (/mnt/share/js/websites/wblog/app/views/admin/posts/_form.html.slim:22: syntax error, unexpected ':', expecting ')'
+...ditor, :editor_id => :content :input_html => { :simple_mode ...
+...                               ^):
+  app/views/admin/posts/new.html.slim:5:in `_app_views_admin_posts_new_html_slim__2407146779071723257_57405660'
+  app/controllers/admin/posts_controller.rb:58:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.2ms)
+
+
+Started GET "/admin/posts" for 192.168.1.142 at 2014-05-14 17:26:42 +0800
+Processing by Admin::PostsController#index as HTML
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4233ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3959ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('53732ace63656e1522010000')}} runtime: 0.3983ms
+  Rendered admin/posts/index.html.slim within layouts/admin (10.2ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 822ms (Views: 820.9ms)
+
+
+Started GET "/" for 192.168.1.142 at 2014-05-14 17:27:15 +0800
+Processing by BlogsController#index as HTML
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4790ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3055ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4368ms
+  Rendered blogs/_post_head.html.slim (5.6ms)
+  Rendered blogs/_qrcode.html.slim (2.8ms)
+  Rendered blogs/index.html.slim within layouts/application (105.8ms)
+  Rendered layouts/_footer.html.slim (0.2ms)
+  Rendered layouts/_google_analytics.html.slim (3.1ms)
+Completed 200 OK in 1037ms (Views: 1033.3ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:27:44 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"test", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"aaaaaaaa<img src=\"/uploads/image/201405/ee6fba084179.jpg\" alt=\"\" />"}}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3365ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4362ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"test"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.3370ms
+  Rendered admin/posts/_form.html.slim (5.5ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (35.9ms)
+Completed 500 Internal Server Error in 108ms
+
+SyntaxError (/mnt/share/js/websites/wblog/app/views/admin/posts/_form.html.slim:22: syntax error, unexpected ':', expecting ')'
+...ditor, :editor_id => :content :input_html => { :simple_mode ...
+...                               ^):
+  app/views/admin/posts/new.html.slim:5:in `_app_views_admin_posts_new_html_slim__2407146779071723257_57405660'
+  app/controllers/admin/posts_controller.rb:58:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.1ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:28:18 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"test", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"aaaaaaaa<img src=\"/uploads/image/201405/ee6fba084179.jpg\" alt=\"\" />"}}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3627ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4346ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"test"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4198ms
+Completed 422 Unprocessable Entity in 225ms
+
+Mongoid::Errors::Validations (
+Problem:
+  Validation of Post failed.
+Summary:
+  The following errors were found: Content can't be blank, Content is too short (minimum is 30 characters)
+Resolution:
+  Try persisting the document with valid data or remove the validations.):
+  app/controllers/admin/posts_controller.rb:53:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.1ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:29:13 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"test", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"aaaaaaaa<img src=\"/uploads/image/201405/ee6fba084179.jpg\" alt=\"\" />"}}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3162ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.6651ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"test"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.3477ms
+Completed 422 Unprocessable Entity in 204ms
+
+Mongoid::Errors::Validations (
+Problem:
+  Validation of Post failed.
+Summary:
+  The following errors were found: Content can't be blank, Content is too short (minimum is 30 characters)
+Resolution:
+  Try persisting the document with valid data or remove the validations.):
+  app/controllers/admin/posts_controller.rb:54:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.3ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:30:09 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"test", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"aaaaaaaa<img src=\"/uploads/image/201405/ee6fba084179.jpg\" alt=\"\" />"}}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3539ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4308ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"test"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.6782ms
+Completed 422 Unprocessable Entity in 230ms
+
+Mongoid::Errors::Validations (
+Problem:
+  Validation of Post failed.
+Summary:
+  The following errors were found: Content can't be blank, Content is too short (minimum is 30 characters)
+Resolution:
+  Try persisting the document with valid data or remove the validations.):
+  app/controllers/admin/posts_controller.rb:55:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.3ms)
+
+
+Started GET "/admin/posts" for 192.168.1.142 at 2014-05-14 17:30:36 +0800
+Processing by Admin::PostsController#index as HTML
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2234ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.6601ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('53732ace63656e1522010000')}} runtime: 0.3467ms
+  Rendered admin/posts/index.html.slim within layouts/admin (81.6ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 953ms (Views: 890.2ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:30:48 +0800
+Processing by Admin::PostsController#new as HTML
+  Rendered admin/posts/_form.html.slim (4.3ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (41.9ms)
+Completed 500 Internal Server Error in 114ms
+
+SyntaxError (/mnt/share/js/websites/wblog/app/views/admin/posts/_form.html.slim:22: syntax error, unexpected ':', expecting ')'
+...ditor, :editor_id => :content :input_html => { :simple_mode ...
+...                               ^):
+  app/views/admin/posts/new.html.slim:5:in `_app_views_admin_posts_new_html_slim__2407146779071723257_57405660'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.6ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:31:05 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"test", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"aaaaaaaa<img src=\"/uploads/image/201405/ee6fba084179.jpg\" alt=\"\" />"}}
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4792ms
+Unpermitted parameters: utf8, authenticity_token, post
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"test"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4013ms
+Completed 422 Unprocessable Entity in 61ms
+
+Mongoid::Errors::Validations (
+Problem:
+  Validation of Post failed.
+Summary:
+  The following errors were found: Content can't be blank, Content is too short (minimum is 30 characters)
+Resolution:
+  Try persisting the document with valid data or remove the validations.):
+  app/controllers/admin/posts_controller.rb:56:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.0ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:31:33 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"test", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"aaaaaaaa<img src=\"/uploads/image/201405/ee6fba084179.jpg\" alt=\"\" />"}}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3811ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.3507ms
+Unpermitted parameters: utf8, authenticity_token, post
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"test"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4470ms
+Completed 422 Unprocessable Entity in 235ms
+
+Mongoid::Errors::Validations (
+Problem:
+  Validation of Post failed.
+Summary:
+  The following errors were found: Content can't be blank, Content is too short (minimum is 30 characters)
+Resolution:
+  Try persisting the document with valid data or remove the validations.):
+  app/controllers/admin/posts_controller.rb:58:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.5ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:32:07 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"test", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"aaaaaaaa<img src=\"/uploads/image/201405/ee6fba084179.jpg\" alt=\"\" />"}}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.6829ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.6532ms
+Unpermitted parameters: utf8, authenticity_token, post
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"test"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.5255ms
+Completed 422 Unprocessable Entity in 227ms
+
+Mongoid::Errors::Validations (
+Problem:
+  Validation of Post failed.
+Summary:
+  The following errors were found: Content can't be blank, Content is too short (minimum is 30 characters)
+Resolution:
+  Try persisting the document with valid data or remove the validations.):
+  app/controllers/admin/posts_controller.rb:58:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.7ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:33:23 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"test", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"aaaafadsfdsfasdfasdfni zhe shi a dfjalsdjflakdfjoweufakjsdjflasjdfljasdlfasoiufwlfjalskdf ni aho a ni shi shui ani zai nali a ni shi shuiewnfa dalfj&nbsp;aaaa<img src=\"/uploads/image/201405/ee6fba084179.jpg\" alt=\"\" />"}}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3325ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.3881ms
+Unpermitted parameters: utf8, authenticity_token, post
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"test"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.5315ms
+Completed 422 Unprocessable Entity in 219ms
+
+Mongoid::Errors::Validations (
+Problem:
+  Validation of Post failed.
+Summary:
+  The following errors were found: Content can't be blank, Content is too short (minimum is 30 characters)
+Resolution:
+  Try persisting the document with valid data or remove the validations.):
+  app/controllers/admin/posts_controller.rb:58:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.5ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-14 17:34:09 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9bfpNyeuYO/3iYX1tQkDLb9eOxX8vom0aIGs3xhPHk=", "title"=>"test", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"aaaafadsfdsfasdfasdfni zhe shi a dfjalsdjflakdfjoweufakjsdjflasjdfljasdlfasoiufwlfjalskdf ni aho a ni shi shui ani zai nali a ni shi shuiewnfa dalfj&nbsp;aaaa<img src=\"/uploads/image/201405/ee6fba084179.jpg\" alt=\"\" />"}}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.5211ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.8196ms
+Unpermitted parameters: utf8, authenticity_token, post
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"test"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.3514ms
+  MOPED: 192.168.1.151:27017 INSERT       database=w_blog collection=posts documents=[{"_id"=>BSON::ObjectId('5373389263656e171d030000'), "visited_count"=>0, "title"=>"test", "content"=>"aaaafadsfdsfasdfasdfni zhe shi a dfjalsdjflakdfjoweufakjsdjflasjdfljasdlfasoiufwlfjalskdf ni aho a ni shi shui ani zai nali a ni shi shuiewnfa dalfj&nbsp;aaaa<img src=\"/uploads/image/201405/ee6fba084179.jpg\" alt=\"\" />", "type"=>"技术", "label_ids"=>[BSON::ObjectId('5373225f63656e146e000000')], "updated_at"=>2014-05-14 09:34:10 UTC, "created_at"=>2014-05-14 09:34:10 UTC}] flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 1.0747ms
+Redirected to http://192.168.1.151:3000/admin
+Completed 302 Found in 229ms
+
+
+Started GET "/admin" for 192.168.1.142 at 2014-05-14 17:34:10 +0800
+Processing by Admin::DashboardController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3188ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"posts", :query=>{}} runtime: 0.1988ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"comments", :query=>{}} runtime: 0.3262ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 1.4428ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"subscribes", :query=>{}} runtime: 0.4243ms
+  Rendered admin/dashboard/index.html.slim within layouts/admin (4.5ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 884ms (Views: 812.2ms)
+
+
+Started GET "/" for 192.168.1.142 at 2014-05-14 17:34:22 +0800
+Processing by BlogsController#index as HTML
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4443ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2967ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 1.4610ms
+  Rendered blogs/_post_head.html.slim (3.4ms)
+  Rendered blogs/_qrcode.html.slim (0.5ms)
+  Rendered blogs/index.html.slim within layouts/application (97.3ms)
+  Rendered layouts/_footer.html.slim (0.2ms)
+  Rendered layouts/_google_analytics.html.slim (0.1ms)
+Completed 200 OK in 963ms (Views: 960.4ms)
+
+
+Started GET "/qrcodes?str=http%3A%2F%2F192.168.1.151%3A3000%2F" for 192.168.1.142 at 2014-05-14 17:34:31 +0800
+Processing by QrcodesController#show as HTML
+  Parameters: {"str"=>"http://192.168.1.151:3000/"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 239ms (Views: 39.3ms)
+
+
+Started GET "/blogs/5373389263656e171d030000" for 192.168.1.142 at 2014-05-14 17:34:34 +0800
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"5373389263656e171d030000"}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3442ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5373389263656e171d030000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.6072ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5373389263656e171d030000')} update={"$set"=>{"visited_count"=>1, "updated_at"=>2014-05-14 09:34:34 UTC}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 13.6049ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{"created_at"=>{"$lt"=>2014-05-14 09:34:10 UTC}, "_id"=>{"$ne"=>BSON::ObjectId('5373389263656e171d030000')}}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.5028ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{"created_at"=>{"$gt"=>2014-05-14 09:34:10 UTC}, "_id"=>{"$ne"=>BSON::ObjectId('5373389263656e171d030000')}}, "$orderby"=>{"created_at"=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.2989ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4457ms
+  Rendered blogs/_post_head.html.slim (0.3ms)
+  Rendered blogs/_qrcode.html.slim (0.2ms)
+  Rendered blogs/_post.html.slim (79.4ms)
+  Rendered blogs/_comment.html.slim (7.2ms)
+  Rendered blogs/show.html.slim within layouts/application (165.9ms)
+  Rendered layouts/_footer.html.slim (0.2ms)
+  Rendered layouts/_google_analytics.html.slim (0.1ms)
+Completed 200 OK in 1068ms (Views: 1043.5ms)
+
+
+Started GET "/qrcodes?str=http%3A%2F%2F192.168.1.151%3A3000%2Fblogs%2F5373389263656e171d030000" for 192.168.1.142 at 2014-05-14 17:34:43 +0800
+Processing by QrcodesController#show as HTML
+  Parameters: {"str"=>"http://192.168.1.151:3000/blogs/5373389263656e171d030000"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 353ms (Views: 57.5ms)
+
+
+Started GET "/blogs/5373389263656e171d030000/likes" for 192.168.1.142 at 2014-05-14 17:34:43 +0800
+Processing by LikesController#index as JSON
+  Parameters: {"blog_id"=>"5373389263656e171d030000"}
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5373389263656e171d030000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2469ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5373389263656e171d030000')}} runtime: 0.4301ms
+Completed 200 OK in 3ms (Views: 0.5ms)
+
+
+Started GET "/blogs/5373389263656e171d030000/comments.json" for 192.168.1.142 at 2014-05-14 17:34:43 +0800
+Processing by CommentsController#index as JSON
+  Parameters: {"blog_id"=>"5373389263656e171d030000"}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.5797ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5373389263656e171d030000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.7975ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=comments selector={"$query"=>{"post_id"=>BSON::ObjectId('5373389263656e171d030000')}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.6799ms
+Completed 200 OK in 8ms (Views: 0.2ms)
+
+
+Started POST "/blogs/5373389263656e171d030000/likes" for 192.168.1.142 at 2014-05-14 17:34:51 +0800
+Processing by LikesController#create as JSON
+  Parameters: {"blog_id"=>"5373389263656e171d030000"}
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5373389263656e171d030000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5303ms
+  MOPED: 192.168.1.151:27017 INSERT       database=w_blog collection=likes documents=[{"_id"=>BSON::ObjectId('537338bc63656e171d040000'), "post_id"=>BSON::ObjectId('5373389263656e171d030000')}] flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 1.0821ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5373389263656e171d030000')}} runtime: 0.4127ms
+Completed 200 OK in 136ms (Views: 0.2ms)
+
+
+Started GET "/admin" for 192.168.1.142 at 2014-05-14 17:36:26 +0800
+Processing by Admin::DashboardController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3105ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"posts", :query=>{}} runtime: 0.4502ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"comments", :query=>{}} runtime: 0.3960ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3066ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"subscribes", :query=>{}} runtime: 1.4979ms
+  Rendered admin/dashboard/index.html.slim within layouts/admin (0.1ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 924ms (Views: 797.9ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:36:37 +0800
+Processing by Admin::PostsController#new as HTML
+  Rendered admin/posts/_form.html.slim (5.3ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (42.4ms)
+Completed 500 Internal Server Error in 110ms
+
+SyntaxError (/mnt/share/js/websites/wblog/app/views/admin/posts/_form.html.slim:22: syntax error, unexpected ':', expecting ')'
+...ditor, :editor_id => :content :input_html => { :simple_mode ...
+...                               ^):
+  app/views/admin/posts/new.html.slim:5:in `_app_views_admin_posts_new_html_slim__2407146779071723257_57405660'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.6ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:37:14 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3420ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4343ms
+  Rendered admin/posts/_form.html.slim (77.1ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (116.8ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 932ms (Views: 930.9ms)
+
+
+Started GET "/admin/posts" for 192.168.1.142 at 2014-05-14 17:37:26 +0800
+Processing by Admin::PostsController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.2500ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3105ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3441ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5373389263656e171d030000')}} runtime: 0.4697ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3586ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('53732ace63656e1522010000')}} runtime: 0.2475ms
+  Rendered admin/posts/index.html.slim within layouts/admin (10.2ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 849ms (Views: 847.4ms)
+
+
+Started GET "/admin/posts/5373389263656e171d030000/edit" for 192.168.1.142 at 2014-05-14 17:37:38 +0800
+Processing by Admin::PostsController#edit as HTML
+  Parameters: {"id"=>"5373389263656e171d030000"}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.2733ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5373389263656e171d030000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3019ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4665ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2182ms
+  Rendered admin/posts/_form.html.slim (33.4ms)
+  Rendered admin/posts/edit.html.slim within layouts/admin (82.2ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 893ms (Views: 889.9ms)
+
+
+Started GET "/admin/posts/5373389263656e171d030000.json" for 192.168.1.142 at 2014-05-14 17:37:47 +0800
+Processing by Admin::PostsController#show as JSON
+  Parameters: {"id"=>"5373389263656e171d030000"}
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5373389263656e171d030000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3810ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3519ms
+Completed 200 OK in 4ms (Views: 0.3ms)
+
+
+Started GET "/admin" for 192.168.1.142 at 2014-05-14 17:40:01 +0800
+Processing by Admin::DashboardController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3282ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"posts", :query=>{}} runtime: 0.4556ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"comments", :query=>{}} runtime: 0.3053ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5267ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"subscribes", :query=>{}} runtime: 0.4811ms
+  Rendered admin/dashboard/index.html.slim within layouts/admin (0.1ms)
+  Rendered layouts/_footer.html.slim (0.2ms)
+Completed 200 OK in 832ms (Views: 825.2ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:40:12 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3105ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.6712ms
+  Rendered admin/posts/_form.html.slim (34.3ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (70.9ms)
+  Rendered layouts/_footer.html.slim (0.2ms)
+Completed 200 OK in 884ms (Views: 882.9ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:41:07 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3360ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5032ms
+  Rendered admin/posts/_form.html.slim (72.6ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (116.0ms)
+Completed 500 Internal Server Error in 187ms
+
+ActionView::Template::Error (undefined method `正文' for #<Post:0x00000007c34220>):
+    19:           - Label.all.each do |label|
+    20:             a.tag href="#" ng-click="addTag($event)" #{label.name}
+    21:           
+    22:   = f.input "正文", :as => :kindeditor, :editor_id => :content,:input_html => { :simple_mode => true } 
+    23:   .row
+    24:     .small-12.large-6.columns.posts-button
+    25:       button 提交
+  app/views/admin/posts/_form.html.slim:22:in `block in _app_views_admin_posts__form_html_slim___4580611514915256561_65091440'
+  app/views/admin/posts/_form.html.slim:2:in `_app_views_admin_posts__form_html_slim___4580611514915256561_65091440'
+  app/views/admin/posts/new.html.slim:5:in `_app_views_admin_posts_new_html_slim__2407146779071723257_57405660'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.6ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:41:45 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3306ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2976ms
+  Rendered admin/posts/_form.html.slim (74.7ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (114.8ms)
+Completed 500 Internal Server Error in 186ms
+
+ActionView::Template::Error (wrong number of arguments (3 for 1..2)):
+    19:           - Label.all.each do |label|
+    20:             a.tag href="#" ng-click="addTag($event)" #{label.name}
+    21:           
+    22:   = f.input :content, "正文", :as => :kindeditor, :editor_id => :content,:input_html => { :simple_mode => true } 
+    23:   .row
+    24:     .small-12.large-6.columns.posts-button
+    25:       button 提交
+  app/views/admin/posts/_form.html.slim:22:in `block in _app_views_admin_posts__form_html_slim___4580611514915256561_62919300'
+  app/views/admin/posts/_form.html.slim:2:in `_app_views_admin_posts__form_html_slim___4580611514915256561_62919300'
+  app/views/admin/posts/new.html.slim:5:in `_app_views_admin_posts_new_html_slim__2407146779071723257_57405660'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.2ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-14 17:43:25 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3413ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2798ms
+  Rendered admin/posts/_form.html.slim (41.4ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (76.8ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 893ms (Views: 889.1ms)
+
+
+Started GET "/admin/posts" for 192.168.1.142 at 2014-05-14 17:43:42 +0800
+Processing by Admin::PostsController#index as HTML
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5891ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4162ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5373389263656e171d030000')}} runtime: 0.3139ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5200ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('53732ace63656e1522010000')}} runtime: 0.3757ms
+  Rendered admin/posts/index.html.slim within layouts/admin (9.8ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 834ms (Views: 833.1ms)
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.2288ms
+
+
+Started GET "/" for 192.168.1.142 at 2014-05-15 09:58:40 +0800
+Processing by BlogsController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.6110ms
+  MOPED: Retrying connection attempt 1 more time(s). runtime: n/a
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.1085ms
+Completed 500 Internal Server Error in 5ms
+
+Moped::Errors::ConnectionFailure (Could not connect to a primary node for replica set #<Moped::Cluster:40741180 @seeds=[<Moped::Node resolved_address="192.168.1.151:27017">]>):
+  app/controllers/blogs_controller.rb:5:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (46.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (82.0ms)
+
+
+Started GET "/favicon.ico" for 192.168.1.142 at 2014-05-15 09:58:41 +0800
+
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (12.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (27.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (134.2ms)
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.9674ms
+
+
+Started GET "/" for 192.168.1.142 at 2014-05-15 10:09:14 +0800
+Processing by BlogsController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.8239ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 41.5221ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.7578ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 11.7668ms
+  Rendered blogs/_post_head.html.slim (46.8ms)
+  Rendered blogs/_qrcode.html.slim (3.6ms)
+  Rendered blogs/index.html.slim within layouts/application (230.2ms)
+  Rendered layouts/_footer.html.slim (3.4ms)
+  Rendered layouts/_google_analytics.html.slim (2.4ms)
+Completed 200 OK in 2786ms (Views: 2740.1ms)
+
+
+Started GET "/qrcodes?str=http%3A%2F%2F192.168.1.151%3A3000%2F" for 192.168.1.142 at 2014-05-15 10:09:25 +0800
+Processing by QrcodesController#show as HTML
+  Parameters: {"str"=>"http://192.168.1.151:3000/"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 223ms (Views: 67.3ms)
+
+
+Started GET "/" for 192.168.1.142 at 2014-05-15 10:13:31 +0800
+Processing by BlogsController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3798ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.3640ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5013ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5614ms
+  Rendered blogs/_post_head.html.slim (2.2ms)
+  Rendered blogs/_qrcode.html.slim (0.4ms)
+  Rendered blogs/index.html.slim within layouts/application (89.8ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+  Rendered layouts/_google_analytics.html.slim (0.1ms)
+Completed 200 OK in 1017ms (Views: 1010.9ms)
+
+
+Started GET "/qrcodes?str=http%3A%2F%2F192.168.1.151%3A3000%2F" for 192.168.1.142 at 2014-05-15 10:13:40 +0800
+Processing by QrcodesController#show as HTML
+  Parameters: {"str"=>"http://192.168.1.151:3000/"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 189ms (Views: 25.2ms)
+
+
+Started GET "/admin" for 192.168.1.142 at 2014-05-15 10:14:27 +0800
+Processing by Admin::DashboardController#index as HTML
+Redirected to http://192.168.1.151:3000/admin/sessions/new
+Filter chain halted as :authericate_user! rendered or redirected
+Completed 302 Found in 2ms
+
+
+Started GET "/admin" for 192.168.1.142 at 2014-05-15 10:14:27 +0800
+Processing by Admin::DashboardController#index as HTML
+Redirected to http://192.168.1.151:3000/admin/sessions/new
+Filter chain halted as :authericate_user! rendered or redirected
+Completed 302 Found in 2ms
+
+
+Started GET "/admin/sessions/new" for 192.168.1.142 at 2014-05-15 10:14:27 +0800
+Processing by Admin::SessionsController#new as HTML
+  Rendered admin/sessions/new.html.slim within layouts/admin (4.5ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 724ms (Views: 723.6ms)
+
+
+Started POST "/admin/sessions?password=ybf@8023&username=admin" for 192.168.1.142 at 2014-05-15 10:14:38 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"password"=>"ybf@8023", "username"=>"admin"}
+Completed 200 OK in 2ms (Views: 0.2ms)
+
+
+Started GET "/admin" for 192.168.1.142 at 2014-05-15 10:14:38 +0800
+Processing by Admin::DashboardController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3413ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"posts", :query=>{}} runtime: 0.3925ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"comments", :query=>{}} runtime: 0.5124ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3867ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"subscribes", :query=>{}} runtime: 0.3711ms
+  Rendered admin/dashboard/index.html.slim within layouts/admin (5.7ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 957ms (Views: 877.7ms)
+
+
+Started GET "/" for 192.168.1.142 at 2014-05-15 10:21:18 +0800
+Processing by BlogsController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3732ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.6633ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2587ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 1.0488ms
+  Rendered blogs/_post_head.html.slim (2.4ms)
+  Rendered blogs/_qrcode.html.slim (0.4ms)
+  Rendered blogs/index.html.slim within layouts/application (84.6ms)
+  Rendered layouts/_footer.html.slim (0.2ms)
+  Rendered layouts/_google_analytics.html.slim (0.1ms)
+Completed 200 OK in 981ms (Views: 976.3ms)
+
+
+Started GET "/admin" for 192.168.1.142 at 2014-05-15 10:21:30 +0800
+Processing by Admin::DashboardController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3348ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"posts", :query=>{}} runtime: 0.3176ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"comments", :query=>{}} runtime: 0.4330ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.7143ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"subscribes", :query=>{}} runtime: 0.2016ms
+  Rendered admin/dashboard/index.html.slim within layouts/admin (0.1ms)
+  Rendered layouts/_footer.html.slim (0.4ms)
+Completed 200 OK in 866ms (Views: 859.7ms)
+
+
+Started GET "/admin/posts/new" for 192.168.1.142 at 2014-05-15 10:21:41 +0800
+Processing by Admin::PostsController#new as HTML
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3528ms
+  Rendered admin/posts/_form.html.slim (271.6ms)
+  Rendered admin/posts/new.html.slim within layouts/admin (315.1ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 1177ms (Views: 1176.1ms)
+
+
+Started POST "/admin/posts" for 192.168.1.142 at 2014-05-15 10:23:03 +0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+DrSTY9C/t4Rb82egsFslK+P2b5CpZhPrdh4yAJHZUs=", "title"=>"testaaa", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"<p>\r\n\ttesafadfadfafdadfasdfadsfasdssssssssssssssssssssssssssssssssssssssssssddd\r\n</p>\r\n<p>\r\n\tfadsfsfas\r\n</p>\r\n<p>\r\n\tfasdfsasdfasdf\r\n</p>\r\n<p>\r\n\tfasdfasdf\r\n</p>"}}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.1042ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.3459ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"title"=>"testaaa"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4890ms
+  MOPED: 192.168.1.151:27017 INSERT       database=w_blog collection=posts documents=[{"_id"=>BSON::ObjectId('5374250763656e0ef2000000'), "visited_count"=>0, "title"=>"testaaa", "content"=>"<p>\r\n\ttesafadfadfafdadfasdfadsfasdssssssssssssssssssssssssssssssssssssssssssddd\r\n</p>\r\n<p>\r\n\tfadsfsfas\r\n</p>\r\n<p>\r\n\tfasdfsasdfasdf\r\n</p>\r\n<p>\r\n\tfasdfasdf\r\n</p>", "type"=>"技术", "label_ids"=>[BSON::ObjectId('5373225f63656e146e000000')], "updated_at"=>2014-05-15 02:23:03 UTC, "created_at"=>2014-05-15 02:23:03 UTC}] flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.7426ms
+Redirected to http://192.168.1.151:3000/admin
+Completed 302 Found in 65ms
+
+
+Started GET "/admin" for 192.168.1.142 at 2014-05-15 10:23:03 +0800
+Processing by Admin::DashboardController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.2688ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"posts", :query=>{}} runtime: 0.1972ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"comments", :query=>{}} runtime: 0.4260ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 1.1832ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"subscribes", :query=>{}} runtime: 0.1820ms
+  Rendered admin/dashboard/index.html.slim within layouts/admin (0.1ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 869ms (Views: 862.9ms)
+
+
+Started GET "/admin/posts" for 192.168.1.142 at 2014-05-15 10:25:21 +0800
+Processing by Admin::PostsController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3064ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.6025ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3166ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5374250763656e0ef2000000')}} runtime: 0.3910ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3834ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5373389263656e171d030000')}} runtime: 0.2224ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2633ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('53732ace63656e1522010000')}} runtime: 0.2428ms
+  Rendered admin/posts/index.html.slim within layouts/admin (17.4ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 814ms (Views: 812.6ms)
+
+
+Started GET "/admin/posts/5374250763656e0ef2000000/edit" for 192.168.1.142 at 2014-05-15 10:28:01 +0800
+Processing by Admin::PostsController#edit as HTML
+  Parameters: {"id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3060ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4241ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4341ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2339ms
+  Rendered admin/posts/_form.html.slim (32.8ms)
+  Rendered admin/posts/edit.html.slim within layouts/admin (63.3ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 902ms (Views: 899.0ms)
+
+
+Started GET "/admin/posts/5374250763656e0ef2000000.json" for 192.168.1.142 at 2014-05-15 10:28:10 +0800
+Processing by Admin::PostsController#show as JSON
+  Parameters: {"id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3204ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4499ms
+Completed 200 OK in 4ms (Views: 0.2ms)
+
+
+Started PATCH "/admin/posts/5374250763656e0ef2000000" for 192.168.1.142 at 2014-05-15 10:38:26 +0800
+Processing by Admin::PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+DrSTY9C/t4Rb82egsFslK+P2b5CpZhPrdh4yAJHZUs=", "title"=>"testaaa", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"<p>\r\n\ttesafadfadfafdadfasdfadsfasdssssssssssssssssssssssssssssssssssssssssssddd\r\n</p>\r\n<p>\r\n\tfadsfsfas\r\n</p>\r\n<p>\r\n\tfasdfsasdfasdf\r\n</p>\r\n<p>\r\n\tfasdfasdf\r\n</p>\r\n<p>\r\n\t修改\r\n</p>"}, "id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3034ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2781ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2041ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} update={"$pull"=>{"post_ids"=>BSON::ObjectId('5374250763656e0ef2000000')}} flags=[:multi]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 48.0031ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} update={"$set"=>{"label_ids"=>[]}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.3518ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.3073ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} update={"$addToSet"=>{"label_ids"=>{"$each"=>[BSON::ObjectId('5373225f63656e146e000000')]}}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.2846ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=labels selector={"_id"=>BSON::ObjectId('5373225f63656e146e000000')} update={"$set"=>{"updated_at"=>2014-05-15 02:38:26 UTC}, "$addToSet"=>{"post_ids"=>{"$each"=>[BSON::ObjectId('5374250763656e0ef2000000')]}}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 1.0469ms
+Unpermitted parameters: utf8, _method, authenticity_token, post, id
+Redirected to http://192.168.1.151:3000/admin/posts
+Completed 302 Found in 65ms
+
+
+Started GET "/admin/posts" for 192.168.1.142 at 2014-05-15 10:38:26 +0800
+Processing by Admin::PostsController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3038ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 1.1242ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2911ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5374250763656e0ef2000000')}} runtime: 0.9705ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2711ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5373389263656e171d030000')}} runtime: 0.2260ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3487ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('53732ace63656e1522010000')}} runtime: 0.2098ms
+  Rendered admin/posts/index.html.slim within layouts/admin (11.1ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 905ms (Views: 904.3ms)
+
+
+Started GET "/blogs/5374250763656e0ef2000000" for 192.168.1.142 at 2014-05-15 10:38:37 +0800
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3558ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} update={"$set"=>{"visited_count"=>1, "updated_at"=>2014-05-15 02:38:37 UTC}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.4316ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{"created_at"=>{"$lt"=>2014-05-15 02:23:03 UTC}, "_id"=>{"$ne"=>BSON::ObjectId('5374250763656e0ef2000000')}}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 33.2545ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{"created_at"=>{"$gt"=>2014-05-15 02:23:03 UTC}, "_id"=>{"$ne"=>BSON::ObjectId('5374250763656e0ef2000000')}}, "$orderby"=>{"created_at"=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.3311ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.8187ms
+  Rendered blogs/_post_head.html.slim (0.2ms)
+  Rendered blogs/_qrcode.html.slim (0.2ms)
+  Rendered blogs/_post.html.slim (74.0ms)
+  Rendered blogs/_comment.html.slim (5.4ms)
+  Rendered blogs/show.html.slim within layouts/application (213.5ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+  Rendered layouts/_google_analytics.html.slim (0.1ms)
+Completed 200 OK in 1174ms (Views: 1134.5ms)
+
+
+Started GET "/qrcodes?str=http%3A%2F%2F192.168.1.151%3A3000%2Fblogs%2F5374250763656e0ef2000000" for 192.168.1.142 at 2014-05-15 10:38:45 +0800
+Processing by QrcodesController#show as HTML
+  Parameters: {"str"=>"http://192.168.1.151:3000/blogs/5374250763656e0ef2000000"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 259ms (Views: 38.4ms)
+
+
+Started GET "/blogs/5374250763656e0ef2000000/likes" for 192.168.1.142 at 2014-05-15 10:38:46 +0800
+Processing by LikesController#index as JSON
+  Parameters: {"blog_id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4836ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2536ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5374250763656e0ef2000000')}} runtime: 0.5552ms
+Completed 200 OK in 4ms (Views: 0.2ms)
+
+
+Started GET "/blogs/5374250763656e0ef2000000/comments.json" for 192.168.1.142 at 2014-05-15 10:38:46 +0800
+Processing by CommentsController#index as JSON
+  Parameters: {"blog_id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3402ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2775ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=comments selector={"$query"=>{"post_id"=>BSON::ObjectId('5374250763656e0ef2000000')}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4545ms
+Completed 200 OK in 4ms (Views: 0.1ms)
+
+
+Started PATCH "/admin/posts/5374250763656e0ef2000000" for 192.168.1.142 at 2014-05-15 10:39:26 +0800
+Processing by Admin::PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+DrSTY9C/t4Rb82egsFslK+P2b5CpZhPrdh4yAJHZUs=", "title"=>"testaaa", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"<p>\r\n\ttesafadfadfafdadfasdfadsfasdssssssssssssssssssssssssssssssssssssssssssddd\r\n</p>\r\n<p>\r\n\tfadsfsfas\r\n</p>\r\n<p>\r\n\tfasdfsasdfasdf\r\n</p>\r\n<p>\r\n\tfasdfasdf\r\n</p>\r\n<p>\r\n\t修改\r\n</p>"}, "id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.2730ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2836ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2846ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} update={"$pull"=>{"post_ids"=>BSON::ObjectId('5374250763656e0ef2000000')}} flags=[:multi]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.5155ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} update={"$set"=>{"label_ids"=>[]}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.2775ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.2857ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} update={"$addToSet"=>{"label_ids"=>{"$each"=>[BSON::ObjectId('5373225f63656e146e000000')]}}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.3594ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=labels selector={"_id"=>BSON::ObjectId('5373225f63656e146e000000')} update={"$set"=>{"updated_at"=>2014-05-15 02:39:26 UTC}, "$addToSet"=>{"post_ids"=>{"$each"=>[BSON::ObjectId('5374250763656e0ef2000000')]}}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.3052ms
+Unpermitted parameters: utf8, _method, authenticity_token, post, id
+Redirected to http://192.168.1.151:3000/admin/posts
+Completed 302 Found in 17ms
+
+
+Started GET "/admin/posts" for 192.168.1.142 at 2014-05-15 10:39:26 +0800
+Processing by Admin::PostsController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.1371ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3578ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3302ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5374250763656e0ef2000000')}} runtime: 0.1611ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5201ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5373389263656e171d030000')}} runtime: 0.2805ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3168ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('53732ace63656e1522010000')}} runtime: 0.2301ms
+  Rendered admin/posts/index.html.slim within layouts/admin (13.2ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 872ms (Views: 870.1ms)
+
+
+Started GET "/admin/posts/5374250763656e0ef2000000/edit" for 192.168.1.142 at 2014-05-15 10:41:40 +0800
+Processing by Admin::PostsController#edit as HTML
+  Parameters: {"id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3234ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3271ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5116ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4127ms
+  Rendered admin/posts/_form.html.slim (72.5ms)
+  Rendered admin/posts/edit.html.slim within layouts/admin (112.2ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 1051ms (Views: 960.5ms)
+
+
+Started GET "/admin/posts/5374250763656e0ef2000000.json" for 192.168.1.142 at 2014-05-15 10:41:49 +0800
+Processing by Admin::PostsController#show as JSON
+  Parameters: {"id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.0797ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.8911ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.6100ms
+Completed 200 OK in 6ms (Views: 0.6ms)
+
+
+Started PATCH "/admin/posts/5374250763656e0ef2000000" for 192.168.1.142 at 2014-05-15 10:41:54 +0800
+Processing by Admin::PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+DrSTY9C/t4Rb82egsFslK+P2b5CpZhPrdh4yAJHZUs=", "title"=>"testaaa", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"<p>\r\n\ttesafadfadfafdadfasdfadsfasdssssssssssssssssssssssssssssssssssssssssssddd\r\n</p>\r\n<p>\r\n\tfadsfsfas\r\n</p>\r\n<p>\r\n\tfasdfsasdfasdf\r\n</p>\r\n<p>\r\n\tfasdfasdf\r\n</p>\r\n<p>\r\n\t测试\r\n</p>"}, "id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.2909ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2715ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 1.2901ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} update={"$pull"=>{"post_ids"=>BSON::ObjectId('5374250763656e0ef2000000')}} flags=[:multi]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.9094ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} update={"$set"=>{"label_ids"=>[]}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.6321ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 1.0957ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} update={"$addToSet"=>{"label_ids"=>{"$each"=>[BSON::ObjectId('5373225f63656e146e000000')]}}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.4383ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=labels selector={"_id"=>BSON::ObjectId('5373225f63656e146e000000')} update={"$set"=>{"updated_at"=>2014-05-15 02:41:54 UTC}, "$addToSet"=>{"post_ids"=>{"$each"=>[BSON::ObjectId('5374250763656e0ef2000000')]}}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.9400ms
+Unpermitted parameters: utf8, _method, authenticity_token, post, id
+Redirected to http://192.168.1.151:3000/admin/posts
+Completed 302 Found in 89ms
+
+
+Started GET "/admin/posts" for 192.168.1.142 at 2014-05-15 10:41:54 +0800
+Processing by Admin::PostsController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.2097ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3537ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3414ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5374250763656e0ef2000000')}} runtime: 0.1898ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4917ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5373389263656e171d030000')}} runtime: 0.2397ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4528ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('53732ace63656e1522010000')}} runtime: 1.2023ms
+  Rendered admin/posts/index.html.slim within layouts/admin (12.3ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 883ms (Views: 882.5ms)
+
+
+Started GET "/admin/posts/5374250763656e0ef2000000/edit" for 192.168.1.142 at 2014-05-15 10:42:07 +0800
+Processing by Admin::PostsController#edit as HTML
+  Parameters: {"id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4387ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5959ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4180ms
+  Rendered admin/posts/_form.html.slim (31.2ms)
+  Rendered admin/posts/edit.html.slim within layouts/admin (68.4ms)
+  Rendered layouts/_footer.html.slim (0.2ms)
+Completed 200 OK in 927ms (Views: 924.4ms)
+
+
+Started GET "/admin/posts/5374250763656e0ef2000000.json" for 192.168.1.142 at 2014-05-15 10:42:15 +0800
+Processing by Admin::PostsController#show as JSON
+  Parameters: {"id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2098ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4671ms
+Completed 200 OK in 4ms (Views: 0.6ms)
+
+
+Started PATCH "/admin/posts/5374250763656e0ef2000000" for 192.168.1.142 at 2014-05-15 10:42:26 +0800
+Processing by Admin::PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+DrSTY9C/t4Rb82egsFslK+P2b5CpZhPrdh4yAJHZUs=", "title"=>"testaaa", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"<p>\r\n\ttesafadfadfafdadfasdfadsfasdssssssssssssssssssssssssssssssssssssssssssddd\r\n</p>\r\n<p>\r\n\tfadsfsfas\r\n</p>\r\n<p>\r\n\tfasdfsasdfasdf\r\n</p>\r\n<p>\r\n\tfasdfasdf\r\n</p>\r\n<p>\r\n\t测试\r\n</p>"}, "id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3098ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3612ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} update={"$pull"=>{"post_ids"=>BSON::ObjectId('5374250763656e0ef2000000')}} flags=[:multi]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.5548ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} update={"$set"=>{"label_ids"=>[]}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.2696ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.3193ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} update={"$addToSet"=>{"label_ids"=>{"$each"=>[BSON::ObjectId('5373225f63656e146e000000')]}}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.4582ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=labels selector={"_id"=>BSON::ObjectId('5373225f63656e146e000000')} update={"$set"=>{"updated_at"=>2014-05-15 02:42:26 UTC}, "$addToSet"=>{"post_ids"=>{"$each"=>[BSON::ObjectId('5374250763656e0ef2000000')]}}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.3096ms
+Unpermitted parameters: utf8, _method, authenticity_token, post, id
+Redirected to http://192.168.1.151:3000/admin/posts
+Completed 302 Found in 16ms
+
+
+Started GET "/admin/posts" for 192.168.1.142 at 2014-05-15 10:42:26 +0800
+Processing by Admin::PostsController#index as HTML
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3654ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3207ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5374250763656e0ef2000000')}} runtime: 0.3369ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4755ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5373389263656e171d030000')}} runtime: 0.2720ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.7419ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('53732ace63656e1522010000')}} runtime: 0.2346ms
+  Rendered admin/posts/index.html.slim within layouts/admin (12.0ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 867ms (Views: 866.1ms)
+
+
+Started GET "/admin/posts/5374250763656e0ef2000000/edit" for 192.168.1.142 at 2014-05-15 10:43:25 +0800
+Processing by Admin::PostsController#edit as HTML
+  Parameters: {"id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3288ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5571ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.7107ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2307ms
+  Rendered admin/posts/_form.html.slim (68.2ms)
+  Rendered admin/posts/edit.html.slim within layouts/admin (107.8ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 1048ms (Views: 964.9ms)
+
+
+Started GET "/admin/posts/5374250763656e0ef2000000.json" for 192.168.1.142 at 2014-05-15 10:43:34 +0800
+Processing by Admin::PostsController#show as JSON
+  Parameters: {"id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3020ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2767ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5976ms
+Completed 200 OK in 6ms (Views: 0.3ms)
+
+
+Started PATCH "/admin/posts/5374250763656e0ef2000000" for 192.168.1.142 at 2014-05-15 10:43:39 +0800
+Processing by Admin::PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+DrSTY9C/t4Rb82egsFslK+P2b5CpZhPrdh4yAJHZUs=", "title"=>"testaaa", "type"=>"技术", "labels"=>"a", "post"=>{"content"=>"<p>\r\n\ttesafadfadfafdadfasdfadsfasdssssssssssssssssssssssssssssssssssssssssssddd\r\n</p>\r\n<p>\r\n\tfadsfsfas\r\n</p>\r\n<p>\r\n\tfasdfsasdfasdf\r\n</p>\r\n<p>\r\n\tfasdfasdf\r\n</p>\r\n<p>\r\n\t<br />\r\n</p>\r\n<p>\r\n\t测试\r\n</p>"}, "id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 1.0875ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3975ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} update={"$pull"=>{"post_ids"=>BSON::ObjectId('5374250763656e0ef2000000')}} flags=[:multi]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.5366ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} update={"$set"=>{"label_ids"=>[]}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.5182ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$query"=>{"name"=>"a"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.5553ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} update={"$addToSet"=>{"label_ids"=>{"$each"=>[BSON::ObjectId('5373225f63656e146e000000')]}}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.6203ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=labels selector={"_id"=>BSON::ObjectId('5373225f63656e146e000000')} update={"$set"=>{"updated_at"=>2014-05-15 02:43:39 UTC}, "$addToSet"=>{"post_ids"=>{"$each"=>[BSON::ObjectId('5374250763656e0ef2000000')]}}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.3605ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} update={"$set"=>{"content"=>"<p>\r\n\ttesafadfadfafdadfasdfadsfasdssssssssssssssssssssssssssssssssssssssssssddd\r\n</p>\r\n<p>\r\n\tfadsfsfas\r\n</p>\r\n<p>\r\n\tfasdfsasdfasdf\r\n</p>\r\n<p>\r\n\tfasdfasdf\r\n</p>\r\n<p>\r\n\t<br />\r\n</p>\r\n<p>\r\n\t测试\r\n</p>", "updated_at"=>2014-05-15 02:43:39 UTC}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.4722ms
+Redirected to http://192.168.1.151:3000/admin/posts
+Completed 302 Found in 86ms
+
+
+Started GET "/admin/posts" for 192.168.1.142 at 2014-05-15 10:43:39 +0800
+Processing by Admin::PostsController#index as HTML
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.2948ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.6612ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3505ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5374250763656e0ef2000000')}} runtime: 0.3860ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4656ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5373389263656e171d030000')}} runtime: 0.3419ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 1.1554ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('53732ace63656e1522010000')}} runtime: 0.3983ms
+  Rendered admin/posts/index.html.slim within layouts/admin (13.1ms)
+  Rendered layouts/_footer.html.slim (0.1ms)
+Completed 200 OK in 857ms (Views: 856.7ms)
+
+
+Started GET "/blogs/5374250763656e0ef2000000" for 192.168.1.142 at 2014-05-15 10:43:50 +0800
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3118ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.6356ms
+  MOPED: 192.168.1.151:27017 UPDATE       database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} update={"$set"=>{"visited_count"=>2, "updated_at"=>2014-05-15 02:43:50 UTC}} flags=[]
+                             COMMAND      database=w_blog command={:getlasterror=>1, :w=>1} runtime: 0.5955ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{"created_at"=>{"$lt"=>2014-05-15 02:23:03 UTC}, "_id"=>{"$ne"=>BSON::ObjectId('5374250763656e0ef2000000')}}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.5157ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"$query"=>{"created_at"=>{"$gt"=>2014-05-15 02:23:03 UTC}, "_id"=>{"$ne"=>BSON::ObjectId('5374250763656e0ef2000000')}}, "$orderby"=>{"created_at"=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4347ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=labels selector={"$and"=>[{"_id"=>{"$in"=>[BSON::ObjectId('5373225f63656e146e000000')]}}]} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3437ms
+  Rendered blogs/_post_head.html.slim (0.2ms)
+  Rendered blogs/_qrcode.html.slim (0.5ms)
+  Rendered blogs/_post.html.slim (65.5ms)
+  Rendered blogs/_comment.html.slim (0.4ms)
+  Rendered blogs/show.html.slim within layouts/application (138.0ms)
+  Rendered layouts/_footer.html.slim (0.2ms)
+  Rendered layouts/_google_analytics.html.slim (0.1ms)
+Completed 200 OK in 1011ms (Views: 989.5ms)
+
+
+Started GET "/blogs/5374250763656e0ef2000000/likes" for 192.168.1.142 at 2014-05-15 10:43:58 +0800
+Processing by LikesController#index as JSON
+  Parameters: {"blog_id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.1210ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.2917ms
+  MOPED: 192.168.1.151:27017 COMMAND      database=w_blog command={:count=>"likes", :query=>{"post_id"=>BSON::ObjectId('5374250763656e0ef2000000')}} runtime: 0.4328ms
+Completed 200 OK in 5ms (Views: 0.2ms)
+
+
+Started GET "/blogs/5374250763656e0ef2000000/comments.json" for 192.168.1.142 at 2014-05-15 10:43:58 +0800
+Processing by CommentsController#index as JSON
+  Parameters: {"blog_id"=>"5374250763656e0ef2000000"}
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=posts selector={"_id"=>BSON::ObjectId('5374250763656e0ef2000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3586ms
+  MOPED: 192.168.1.151:27017 QUERY        database=w_blog collection=comments selector={"$query"=>{"post_id"=>BSON::ObjectId('5374250763656e0ef2000000')}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.9260ms
+Completed 200 OK in 4ms (Views: 0.2ms)
+  MOPED: 192.168.1.151:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.1601ms

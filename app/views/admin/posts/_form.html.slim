@@ -1,0 +1,25 @@
+- url = @post.new_record? ? admin_posts_path : admin_post_path(@post)
+= simple_form_for(@post, url: url, html: {novalidate: '' }) do |f|
+  .row
+    .large-6.columns
+      = f.input :title, label: '标题', "ng-model"=>"title", input_html: { name: 'title' }
+  .row
+    .small-6.large-3.columns
+      = f.input :type, :as=>:select, :collection=> [ Post::TECH, Post::LIFE, Post::CREATOR ], label: '类别', "ng-model"=>"type", input_html: { name: 'type' }
+  .row
+    .small-12.large-6.columns
+      = label_tag :labels, '标签'
+      = text_field_tag :labels, @post.labels_content(true), "ng-model"=>"labels", "ng-initial" => ''
+
+  .row
+    .small-12.columns
+      p
+        | 已有标签:
+        span
+          - Label.all.each do |label|
+            a.tag href="#" ng-click="addTag($event)" #{label.name}
+          
+  = f.input :content, :as => :kindeditor, :editor_id => :content,:input_html => { :simple_mode => true } 
+  .row
+    .small-12.large-6.columns.posts-button
+      button 提交

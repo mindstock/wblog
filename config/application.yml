@@ -1,0 +1,25 @@
+# 必须配置的
+SITE_NAME: "小鸡,快跑.. Blog"
+# 后台登录的用户名与密码, 不填的话无法管理后台
+# 建议使用个人邮箱, 如果同时配置了 SENDCLOUD_USER, 则启用邮件通知, 源代码参考: /app/models/comment.rb
+ADMIN_USER: 'admin'
+ADMIN_PASSWORD: 'ybf@8023'
+
+# Rails secret token, 用 rake secret 生成一个填这里, 不要跟别人的一样
+SECRET_TOKEN: 'e4122773d4324fce978c52cde790d84d14f7194f377aea41b7b8302d1d10150e6076a3b7e5e0c1f24ca330cf0a058482c95ea37908bba1722d0761ba5d4e566a'
+
+# SEO 搜索优化, 不填则不显示
+# 首页介绍
+INTRODUCE: '这是姚博锋的博客, 姚博锋是暂住在上海的一名 Ruby 程序员, 这里是关于技术, 创业, 生活的思考'
+
+# 可选的
+# google analytics, 如果不需要可以留空
+GOOGLE: 'UA-32883596-1'
+
+# SENDCLOUD 邮件订阅功能, 留空用户名表示不需要创建博客后发送订阅邮件
+# 更多参数细节请查阅: /app/workers/new_post_worker.rb
+SENDCLOUD_USER: ''
+SENDCLOUD_PASSWORD: ''
+SENDCLOUD_FROM: ''
+SENDCLOUD_FROMNAME: ''
+SENDCLOUD_SITE_ADDRESS: ''

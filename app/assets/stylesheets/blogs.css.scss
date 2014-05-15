@@ -1,0 +1,118 @@
+.blog-title {
+  border-bottom: 1px solid #dddddd;
+  padding: 0.5rem 0;
+}
+
+.ptag {
+  text-align: right;
+  margin-bottom: 0.5rem;
+  span {
+    margin-left: 0.5rem;
+  }
+  .has-tip {
+    border: none;
+  }
+}
+
+.content {
+  padding-top: 0.5rem;
+}
+
+.read-more {
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.275rem;
+}
+
+.published-at {
+  text-align: right;
+}
+
+.blog-over {
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.recent-title {
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 1rem;
+}
+
+.recent-content {
+  padding-bottom: 3rem;
+  li {
+    list-style: disc;
+  }
+  padding-left: 0rem;
+}
+
+@media only screen and (max-width: 40em) {
+  .self-introduce-index {
+    display: none;
+  }
+}
+.self-introduce {
+  margin-top: 2.2rem;
+
+  h1, h2, h3, h4, h5, h6 {
+    border-bottom: 1px solid #dddddd;
+  }
+}
+
+.aboutme-index {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+  li {
+    margin-left: 0;
+    padding-bottom: 0.5rem;
+    span {
+      &:first-child{
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+.qrcode {
+  display: inline-block;
+  float: right;
+  margin-top: -5.5rem;
+  i {
+    margin-right: 0.5rem;
+  }
+}
+
+.qrcode-wrapper {
+  float: right;
+  margin-top: -2rem;
+  text-align: right;
+  table {
+    float: right;
+  }
+  p {
+    clear: both;
+  }
+}
+
+.subscribe-ul {
+  list-style-type: none;
+  margin-left: 0;
+  li {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+  .rss-subscribe {
+    margin-top: 0.5rem;
+  }
+
+  .subscribe-success {
+    margin-left: 1rem;
+    color: green;
+  }
+
+  .subscribe-fail {
+    margin-left: 1rem;
+    color: red;
+  }
+}
